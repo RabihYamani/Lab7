@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+    <style>
+        li {
+            margin-bottom: 10px;
+        }
+
+        li button {
+            font-size: 8px;
+            margin-left: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My shopping list</h1>
+
+    <div>
+        <label for="item">Enter a new item:</label>
+        <input type="text" name="item" id="item">
+        <button>Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+
+        var var1 = document.getElementsByTagName("ul");
+        var var2 = document.getElementById("item");
+        var var3 = document.getElementsByTagName("button");
+
+
+
+        function clicked() {
+            var current = document.getElementById("item").value;
+            console.log(current);
+            document.getElementById("item").value = "";
+
+
+            var element1 = document.createElement("li");
+            var element2 = document.createElement("span");
+            var element3 = document.createElement("button");
+
+
+            element1.appendChild(element2);
+            element1.appendChild(element3);
+            element3.addEventListener("click", () => var1[0].removeChild(element1));
+
+            element2.innerText = current;
+            element3.innerText = "Delete";
+
+            var1[0].appendChild(element1);
+           
+        }
+        var3[0].addEventListener("click", clicked);
+        
+    </script> 
+</body>
+
+</html>
